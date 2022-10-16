@@ -1,0 +1,61 @@
+
+<html>
+<head>
+	<title>INKOOP PROBLEM </title>
+	<style type="text/css">
+		body{
+			border: 5px blue solid;
+			padding-top: 300px;
+			padding-left:40% ;
+			border-radius: 10px;
+
+		}
+		#data{
+			    width: 200px;
+			    font-size: 20px;
+			    border: 3px black solid;
+			    border-radius: 3px;
+			    margin-bottom: 5px;
+
+		}
+		#innerText{
+			font-size: 15px;
+			font-weight: bold;
+			font-family: sans-serif;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		
+		function solution(){
+			text = document.getElementById('innerText');
+			data = parseInt(document.getElementById('data').value);
+			if(data<0){
+				text.innerHTML="Enter a positive value";
+				text.style.color="red";
+			}
+			else if(data%2==0)
+				printtext(data);
+			else if(data%2!=0)
+				printtext(data);
+
+			
+		}
+		function printtext(data){
+			text.innerHTML="";
+			for(i=1;i<=3;i++)
+				text.innerHTML=text.innerHTML+(data+2*i)+",";
+			text.innerHTML=text.innerHTML.slice(0,-1);
+			text.style.color="blue";
+		}
+	</script>
+</head>
+<body>
+
+	<input type="number" onchange="solution()"id = "data"><br>
+	<span id="innerText"></span><br>
+
+
+
+</body>
+</html>
